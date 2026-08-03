@@ -1,12 +1,12 @@
-import desabafos from "../assets/images/trabalhos/desabafos.jpg";
-import amorAtlantico from "../assets/images/trabalhos/amor-atlantico.jpg";
-import fuga from "../assets/images/trabalhos/fuga.jpg";
-import presente from "../assets/images/trabalhos/presente.jpg";
-import prefacio from "../assets/images/trabalhos/prefacio.jpg";
-import arrepio from "../assets/images/trabalhos/arrepio.jpg";
-import intensidade from "../assets/images/trabalhos/intensidade.jpg";
-import pertinhoDeMim from "../assets/images/trabalhos/Pertinho-de-mim.jpg";
-import acender from "../assets/images/trabalhos/acender.jpg";
+import desabafos from "../assets/images/Trabalhos/desabafos.jpg";
+import amorAtlantico from "../assets/images/Trabalhos/amor-atlantico.jpg";
+import fuga from "../assets/images/Trabalhos/fuga.jpg";
+import presente from "../assets/images/Trabalhos/presente.jpg";
+import prefacio from "../assets/images/Trabalhos/prefacio.jpg";
+import arrepio from "../assets/images/Trabalhos/arrepio.jpg";
+import intensidade from "../assets/images/Trabalhos/intensidade.jpg";
+import pertinhoDeMim from "../assets/images/Trabalhos/Pertinho-de-mim.jpg";
+import acender from "../assets/images/Trabalhos/acender.jpg";
 
 export const eps = [
     {
