@@ -2,7 +2,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
 
-import claraSobre from "../../assets/images/sobre/clara-sobre.jpg";
+import claraSobre from "../../assets/images/Sobre/clara-sobre.jpg";
 
 function Sobre() {
     return (
