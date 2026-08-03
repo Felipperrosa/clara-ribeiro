@@ -5,7 +5,7 @@ import presente from "../assets/images/Trabalhos/presente.jpg";
 import prefacio from "../assets/images/Trabalhos/prefacio.jpg";
 import arrepio from "../assets/images/Trabalhos/arrepio.jpg";
 import intensidade from "../assets/images/Trabalhos/intensidade.jpg";
-import pertinhoDeMim from "../assets/images/Trabalhos/Pertinho-de-mim.jpg";
+import pertinhoDeMim from "../assets/images/Trabalhos/pertinho-de-mim.jpg";
 import acender from "../assets/images/Trabalhos/acender.jpg";
 
 export const eps = [
