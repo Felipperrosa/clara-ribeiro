@@ -8,15 +8,12 @@ function Hero() {
         <section
             className="
                 relative
-                h-[calc(100svh-88px-105px)]
+                h-[calc(100vh-210px)]
                 min-h-[500px]
                 overflow-hidden
-                sm:min-h-[540px]
-                md:h-[calc(100vh-88px-105px)]
-                md:min-h-[560px]
             "
         >
-            {/* IMAGEM ÚNICA - TELA TODA */}
+            {/* IMAGEM */}
             <div className="absolute inset-0 h-full w-full overflow-hidden">
                 <picture>
                     <source
@@ -38,18 +35,6 @@ function Hero() {
                 </picture>
             </div>
 
-            {/* ESCURECIMENTO
-            <div
-                aria-hidden="true"
-                className="
-                    pointer-events-none
-                    absolute
-                    inset-0
-                    bg-[#010307]/10
-                "
-            />
-            */}
-
             {/* CONTEÚDO */}
             <div
                 className="
@@ -60,305 +45,61 @@ function Hero() {
                     flex-col
                     items-center
                     justify-center
-                    md:justify-end
                     px-5
                     text-center
                 "
             >
                 <Link
-    to="/trabalhos"
-    className="
-        inline-flex
-        min-h-[48px]
-        min-w-[155px]
-        items-center
-        justify-center
+                    to="/trabalhos"
+                    className="
+                        inline-flex
+                        min-h-[48px]
+                        min-w-[155px]
+                        items-center
+                        justify-center
+                        rounded-full
+                        border-2
+                        border-[#DDF0FF]
+                        bg-[#010307]/10
+                        px-9
+                        py-3
+                        text-base
+                        font-semibold
+                        uppercase
+                        tracking-[0.18em]
+                        text-[#DDF0FF]
+                        backdrop-blur-[2px]
 
-        rounded-full
-        border-2
-        border-[#DDF0FF]
-        bg-[#010307]/10
+                        opacity-0
+                        translate-y-6
+                        animate-[buttonAppear_1s_cubic-bezier(0.16,1,0.3,1)_0.5s_forwards]
 
-        px-9
-        py-3
+                        transition-all
+                        duration-300
 
-        text-base
-        font-semibold
-        uppercase
-        tracking-[0.18em]
-        text-[#DDF0FF]
+                        hover:-translate-y-1
+                        hover:border-[#DDF0FF]
+                        hover:bg-[#DDF0FF]
+                        hover:text-[#010307]
+                        hover:shadow-[0_0_22px_rgba(68,87,202,0.55)]
 
-        backdrop-blur-[2px]
+                        sm:min-w-[170px]
+                        sm:px-12
+                        sm:py-4
+                        sm:text-lg
+                        sm:tracking-[0.25em]
 
-        opacity-0
-        translate-y-6
-        animate-[buttonAppear_1s_cubic-bezier(0.16,1,0.3,1)_0.5s_forwards]
-
-        transition-all
-        duration-300
-
-        hover:-translate-y-1
-        hover:border-[#DDF0FF]
-        hover:bg-[#DDF0FF]
-        hover:text-[#010307]
-        hover:shadow-[0_0_22px_rgba(68,87,202,0.55)]
-
-        sm:min-w-[170px]
-        sm:px-12
-        sm:py-4
-        sm:text-lg
-        sm:tracking-[0.25em]
-
-        md:absolute
-        md:left-1/2
-        md:-translate-x-1/2
-        md:bottom-[120px]
-    "
->
-    Me ouça
-</Link>
+                        md:absolute
+                        md:left-1/2
+                        md:-translate-x-1/2
+                        md:bottom-[120px]
+                    "
+                >
+                    Me ouça
+                </Link>
             </div>
         </section>
     );
 }
 
 export default Hero;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//======================================================================
-// function Hero() {
-//     return (
-//         <section
-//             className="
-//                 relative
-//                 h-[calc(100svh-88px-105px)]
-//                 min-h-[500px]
-//                 overflow-hidden
-//                 sm:min-h-[540px]
-//                 md:h-[calc(100vh-88px-105px)]
-//                 md:min-h-[560px]
-//             "
-//         >
-//             {/* IMAGENS */}
-//             <div className="flex h-full">
-
-//                 {/* FOTO ESQUERDA
-//                     CELULAR: ocupa 100%
-//                     TABLET/DESKTOP: ocupa 50%
-//                 */}
-//                 <div
-//                     className="
-//                         relative
-//                         h-full
-//                         w-full
-//                         overflow-hidden
-
-//                         sm:w-1/2
-//                     "
-//                 >
-//                     <img
-//                         src={fotoEsquerda}
-//                         alt="Clara Ribeiro"
-//                         className="
-//                             h-full
-//                             w-full
-//                             scale-[1.03]
-//                             object-cover
-
-//                             object-[50%_45%]
-
-//                             sm:object-[38%_45%]
-//                         "
-//                     />
-//                 </div>
-
-//                 {/* FOTO DIREITA
-//                     CELULAR: escondida
-//                     TABLET/DESKTOP: aparece normalmente
-//                 */}
-//                 <div
-//                     className="
-//                         hidden
-//                         h-full
-//                         w-1/2
-//                         overflow-hidden
-
-//                         sm:block
-//                     "
-//                 >
-//                     <img
-//                         src={fotoDireita}
-//                         alt="Clara Ribeiro"
-//                         className="
-//                             h-full
-//                             w-full
-//                             scale-[1.03]
-//                             object-cover
-//                             object-[62%_15%]
-//                         "
-//                     />
-//                 </div>
-//             </div>
-
-//             {/* ESCURECIMENTO */}
-//             <div
-//                 aria-hidden="true"
-//                 className="
-//                     pointer-events-none
-//                     absolute
-//                     inset-0
-//                     bg-[#010307]/10
-
-//                     sm:bg-transparent
-//                 "
-//             />
-
-//             {/* CONTEÚDO */}
-//             <div
-//                 className="
-//                     absolute
-//                     inset-0
-//                     z-20
-//                     flex
-//                     flex-col
-//                     items-center
-//                     justify-center
-//                     px-5
-//                     text-center 
-//                 "
-//             >
-//                 {/* <h1
-//                     className="
-//                         text-4xl
-//                         font-black
-//                         uppercase
-//                         tracking-tight
-//                         text-[#3c096c]
-//                         drop-shadow-lg
-
-//                         sm:text-5xl
-//                         md:text-7xl
-//                     "
-//                     style={{
-//                         fontFamily: '"Chango", sans-serif',
-//                     }}
-//                 >
-//                     OOMC
-//                 </h1> */}
-            
-// <Link
-//     to="/trabalhos"
-//     style={{
-//         marginTop: "24px",
-//     }}
-//     className="
-//         inline-flex
-//         min-h-[48px]
-//         min-w-[155px]
-//         items-center
-//         justify-center
-//         rounded-full
-//         border-2
-//         border-[#DDF0FF]
-//         bg-[#010307]/10
-//         px-9
-//         py-3
-//         text-base
-//         font-semibold
-//         uppercase
-//         tracking-[0.18em]
-//         text-[#DDF0FF]
-//         backdrop-blur-[2px]
-
-//         /* ANIMAÇÃO DE ENTRADA */
-//         opacity-0
-//         translate-y-6
-//         animate-[buttonAppear_1s_cubic-bezier(0.16,1,0.3,1)_0.5s_forwards]
-
-//         /* HOVER ORIGINAL */
-//         transition-all
-//         duration-300
-//         hover:-translate-y-1
-//         hover:border-[#DDF0FF]
-//         hover:bg-[#DDF0FF]
-//         hover:text-[#010307]
-//         hover:shadow-[0_0_22px_rgba(68,87,202,0.55)]
-
-//         sm:min-w-[170px]
-//         sm:px-12
-//         sm:py-4
-//         sm:text-lg
-//         sm:tracking-[0.25em]
-//     "
-// >
-//     Me ouça
-// </Link>
-//             </div>
-//         </section>
-//     );
-// }
-
-// export default Hero;

@@ -7,7 +7,7 @@ import claraSobreFundo from "../../assets/images/Sobre/clara-sobre-fundo.jpg";
 function Sobre() {
     return (
         <div className="flex min-h-screen flex-col bg-[#010307]">
-            <Navbar />
+            
 
             <main
                 className="
@@ -222,7 +222,7 @@ function Sobre() {
                 </div>
             </main>
 
-            <Footer />
+            
         </div>
     );
 }

@@ -75,8 +75,7 @@ function Trabalhos() {
 
     return (
         <div className="flex min-h-screen flex-col bg-[#010307]">
-            <Navbar />
-
+            
             <main className="relative flex-1 overflow-hidden bg-[#010307]">
                 
                 {/* FOTO DE FUNDO ADAPTADA PARA CELULAR E PC */}
@@ -117,7 +116,6 @@ function Trabalhos() {
                 </div>
             </main>
 
-            <Footer />
         </div>
     );
 }
