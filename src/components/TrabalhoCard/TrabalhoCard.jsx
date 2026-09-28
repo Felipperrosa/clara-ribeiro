@@ -18,26 +18,44 @@ function TrabalhoCard({
                 shrink-0
                 snap-start
                 cursor-pointer
-                rounded-xl
+                rounded-lg
                 p-2
+
                 transition-all
                 duration-500
                 ease-out
 
-                hover:-translate-y-1
-                hover:bg-gray-100
-                hover:shadow-lg
+                hover:-translate-y-1.5
 
                 sm:w-[210px]
-                sm:rounded-2xl
                 sm:p-3
 
                 md:w-[240px]
-                md:hover:-translate-y-2
-                md:hover:shadow-xl
             "
         >
-            <div className="aspect-square overflow-hidden rounded-lg bg-gray-100">
+            {/* CAPA DA MÚSICA/ALBUM */}
+            <div
+                className="
+                    relative
+                    aspect-square
+                    overflow-hidden
+                    rounded-lg
+                    bg-[#161526]
+                    shadow-md
+
+                    /* TRANSITION KEN HOVER EFFECTS ITI LADAWAN */
+                    transition-all
+                    duration-500
+                    ease-out
+
+                    /* 1. Ring/Borde nga aglawag */
+                    group-hover:ring-2
+                    group-hover:ring-[#DDF0FF]/80
+
+                    /* 2. Glow effect (Aniniwan nga agluwas ti silag) */
+                    group-hover:shadow-[0_0_25px_rgba(68,87,202,0.65)]
+                "
+            >
                 <img
                     src={imagem}
                     alt={`Capa de ${titulo}`}
@@ -46,21 +64,43 @@ function TrabalhoCard({
                         h-full
                         w-full
                         object-cover
-                        transition-transform
+                        transition-all
                         duration-500
                         ease-out
                         group-hover:scale-105
+                        group-hover:brightness-110
+                    "
+                />
+
+                {/* OVERLAY NGA AGLAWAG (Optional: Idaddua ti raniag) */}
+                <div 
+                    className="
+                        pointer-events-none
+                        absolute 
+                        inset-0 
+                        bg-gradient-to-t 
+                        from-[#4457CA]/20 
+                        to-transparent 
+                        opacity-0 
+                        transition-opacity 
+                        duration-500 
+                        group-hover:opacity-100
                     "
                 />
             </div>
 
+            {/* INPORMASYON (TEXTOS) */}
             <div className="pt-3">
                 <h3
                     className="
                         text-sm
                         font-bold
                         leading-snug
-                        text-black
+                        text-[#DDF0FF]
+                        drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]
+                        transition-colors
+                        duration-300
+                        group-hover:text-white
                         sm:text-base
                     "
                 >
@@ -71,15 +111,32 @@ function TrabalhoCard({
                     className="
                         mt-1
                         text-xs
+                        font-medium
                         leading-snug
-                        text-gray-700
+                        text-[#C1C9DC]
+                        drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]
+                        transition-colors
+                        duration-300
+                        group-hover:text-white
                         sm:text-sm
                     "
                 >
                     {artistas}
                 </p>
 
-                <p className="mt-1 text-[11px] text-gray-500 sm:text-xs">
+                <p
+                    className="
+                        mt-1
+                        text-[11px]
+                        font-medium
+                        text-[#AEB7CC]
+                        drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]
+                        transition-colors
+                        duration-300
+                        group-hover:text-[#DDF0FF]
+                        sm:text-xs
+                    "
+                >
                     Lançado em {data}
                 </p>
             </div>

@@ -1,9 +1,30 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Chango&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  html {
-    scroll-behavior: smooth;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animação de entrada do botão */
+@keyframes buttonAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

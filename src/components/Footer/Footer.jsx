@@ -14,7 +14,7 @@ function Footer() {
                 flex-col
                 items-center
                 justify-center
-                bg-black
+                bg-[#0E111D]
                 px-5
                 py-5
                 text-white

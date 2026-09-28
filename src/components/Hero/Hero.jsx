@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-import fotoEsquerda from "../../assets/images/Hero/clara-hero-1.png";
-import fotoDireita from "../../assets/images/Hero/clara-hero-2.png";
+import fotoHero from "../../assets/images/Hero/banner_01.jpg";
+import fotoHeroMobile from "../../assets/images/Hero/banner_01_v.jpg";
 
 function Hero() {
     return (
@@ -16,85 +16,41 @@ function Hero() {
                 md:min-h-[560px]
             "
         >
-            {/* Imagens */}
-            <div className="flex h-full">
-                <div
-                    className="
-                        relative
-                        z-10
-                        h-full
-                        w-[calc(50%+2px)]
-                        overflow-hidden
-                        sm:w-1/2
-                    "
-                >
-                    <img
-                        src={fotoEsquerda}
-                        alt="Clara Ribeiro"
-                        className="
-                            h-full
-                            w-full
-                            object-cover
-                            object-[38%_top]
-                            sm:object-top
-                        "
+            {/* IMAGEM ÚNICA - TELA TODA */}
+            <div className="absolute inset-0 h-full w-full overflow-hidden">
+                <picture>
+                    <source
+                        media="(max-width: 639px)"
+                        srcSet={fotoHeroMobile}
                     />
-                </div>
 
-                <div
-                    className="
-                        relative
-                        -ml-[2px]
-                        h-full
-                        w-[calc(50%+2px)]
-                        overflow-hidden
-                        sm:ml-0
-                        sm:w-1/2
-                    "
-                >
                     <img
-                        src={fotoDireita}
+                        src={fotoHero}
                         alt="Clara Ribeiro"
                         className="
                             h-full
                             w-full
+                            scale-[1.03]
                             object-cover
-                            object-[62%_top]
-                            sm:object-top
+                            object-[50%_55%]
                         "
                     />
-                </div>
+                </picture>
             </div>
 
-            {/* Suaviza levemente a divisão no celular */}
-            <div
-                aria-hidden="true"
-                className="
-                    pointer-events-none
-                    absolute
-                    inset-y-0
-                    left-1/2
-                    w-[3px]
-                    -translate-x-1/2
-                    bg-black/5
-                    backdrop-blur-[1px]
-                    sm:hidden
-                "
-            />
-
-            {/* Escurecimento leve para melhorar a leitura */}
+            {/* ESCURECIMENTO
             <div
                 aria-hidden="true"
                 className="
                     pointer-events-none
                     absolute
                     inset-0
-                    bg-black/10
-                    sm:bg-transparent
+                    bg-[#010307]/10
                 "
             />
+            */}
 
-            {/* Conteúdo central */}
+            {/* CONTEÚDO */}
             <div
                 className="
                     absolute
@@ -104,66 +60,305 @@ function Hero() {
                     flex-col
                     items-center
                     justify-center
+                    md:justify-end
                     px-5
                     text-center
                 "
             >
-                <h1
-                    className="
-                        text-4xl
-                        font-black
-                        uppercase
-                        tracking-tight
-                        text-red-600
-                        drop-shadow-lg
-                        sm:text-5xl
-                        md:text-7xl
-                    "
-                >
-                    Desabafos
-                </h1>
-
                 <Link
-                    to="/trabalhos"
-                    style={{ marginTop: "24px" }}
-                    className="
-                        inline-flex
-                        min-h-[48px]
-                        min-w-[155px]
-                        items-center
-                        justify-center
-                        rounded-full
-                        border-2
-                        border-white
-                        bg-black/10
-                        px-9
-                        py-3
-                        text-base
-                        font-semibold
-                        uppercase
-                        tracking-[0.18em]
-                        text-white
-                        backdrop-blur-[2px]
-                        transition-all
-                        duration-300
+    to="/trabalhos"
+    className="
+        inline-flex
+        min-h-[48px]
+        min-w-[155px]
+        items-center
+        justify-center
 
-                        hover:-translate-y-1
-                        hover:bg-white
-                        hover:text-black
-                        hover:shadow-[0_0_20px_rgba(255,255,255,0.35)]
+        rounded-full
+        border-2
+        border-[#DDF0FF]
+        bg-[#010307]/10
 
-                        sm:min-w-[170px]
-                        sm:px-12
-                        sm:py-4
-                        sm:text-lg
-                        sm:tracking-[0.25em]
-                    "
-                >
-                    Me ouça
-                </Link>
+        px-9
+        py-3
+
+        text-base
+        font-semibold
+        uppercase
+        tracking-[0.18em]
+        text-[#DDF0FF]
+
+        backdrop-blur-[2px]
+
+        opacity-0
+        translate-y-6
+        animate-[buttonAppear_1s_cubic-bezier(0.16,1,0.3,1)_0.5s_forwards]
+
+        transition-all
+        duration-300
+
+        hover:-translate-y-1
+        hover:border-[#DDF0FF]
+        hover:bg-[#DDF0FF]
+        hover:text-[#010307]
+        hover:shadow-[0_0_22px_rgba(68,87,202,0.55)]
+
+        sm:min-w-[170px]
+        sm:px-12
+        sm:py-4
+        sm:text-lg
+        sm:tracking-[0.25em]
+
+        md:absolute
+        md:left-1/2
+        md:-translate-x-1/2
+        md:bottom-[120px]
+    "
+>
+    Me ouça
+</Link>
             </div>
         </section>
     );
 }
 
 export default Hero;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//======================================================================
+// function Hero() {
+//     return (
+//         <section
+//             className="
+//                 relative
+//                 h-[calc(100svh-88px-105px)]
+//                 min-h-[500px]
+//                 overflow-hidden
+//                 sm:min-h-[540px]
+//                 md:h-[calc(100vh-88px-105px)]
+//                 md:min-h-[560px]
+//             "
+//         >
+//             {/* IMAGENS */}
+//             <div className="flex h-full">
+
+//                 {/* FOTO ESQUERDA
+//                     CELULAR: ocupa 100%
+//                     TABLET/DESKTOP: ocupa 50%
+//                 */}
+//                 <div
+//                     className="
+//                         relative
+//                         h-full
+//                         w-full
+//                         overflow-hidden
+
+//                         sm:w-1/2
+//                     "
+//                 >
+//                     <img
+//                         src={fotoEsquerda}
+//                         alt="Clara Ribeiro"
+//                         className="
+//                             h-full
+//                             w-full
+//                             scale-[1.03]
+//                             object-cover
+
+//                             object-[50%_45%]
+
+//                             sm:object-[38%_45%]
+//                         "
+//                     />
+//                 </div>
+
+//                 {/* FOTO DIREITA
+//                     CELULAR: escondida
+//                     TABLET/DESKTOP: aparece normalmente
+//                 */}
+//                 <div
+//                     className="
+//                         hidden
+//                         h-full
+//                         w-1/2
+//                         overflow-hidden
+
+//                         sm:block
+//                     "
+//                 >
+//                     <img
+//                         src={fotoDireita}
+//                         alt="Clara Ribeiro"
+//                         className="
+//                             h-full
+//                             w-full
+//                             scale-[1.03]
+//                             object-cover
+//                             object-[62%_15%]
+//                         "
+//                     />
+//                 </div>
+//             </div>
+
+//             {/* ESCURECIMENTO */}
+//             <div
+//                 aria-hidden="true"
+//                 className="
+//                     pointer-events-none
+//                     absolute
+//                     inset-0
+//                     bg-[#010307]/10
+
+//                     sm:bg-transparent
+//                 "
+//             />
+
+//             {/* CONTEÚDO */}
+//             <div
+//                 className="
+//                     absolute
+//                     inset-0
+//                     z-20
+//                     flex
+//                     flex-col
+//                     items-center
+//                     justify-center
+//                     px-5
+//                     text-center 
+//                 "
+//             >
+//                 {/* <h1
+//                     className="
+//                         text-4xl
+//                         font-black
+//                         uppercase
+//                         tracking-tight
+//                         text-[#3c096c]
+//                         drop-shadow-lg
+
+//                         sm:text-5xl
+//                         md:text-7xl
+//                     "
+//                     style={{
+//                         fontFamily: '"Chango", sans-serif',
+//                     }}
+//                 >
+//                     OOMC
+//                 </h1> */}
+            
+// <Link
+//     to="/trabalhos"
+//     style={{
+//         marginTop: "24px",
+//     }}
+//     className="
+//         inline-flex
+//         min-h-[48px]
+//         min-w-[155px]
+//         items-center
+//         justify-center
+//         rounded-full
+//         border-2
+//         border-[#DDF0FF]
+//         bg-[#010307]/10
+//         px-9
+//         py-3
+//         text-base
+//         font-semibold
+//         uppercase
+//         tracking-[0.18em]
+//         text-[#DDF0FF]
+//         backdrop-blur-[2px]
+
+//         /* ANIMAÇÃO DE ENTRADA */
+//         opacity-0
+//         translate-y-6
+//         animate-[buttonAppear_1s_cubic-bezier(0.16,1,0.3,1)_0.5s_forwards]
+
+//         /* HOVER ORIGINAL */
+//         transition-all
+//         duration-300
+//         hover:-translate-y-1
+//         hover:border-[#DDF0FF]
+//         hover:bg-[#DDF0FF]
+//         hover:text-[#010307]
+//         hover:shadow-[0_0_22px_rgba(68,87,202,0.55)]
+
+//         sm:min-w-[170px]
+//         sm:px-12
+//         sm:py-4
+//         sm:text-lg
+//         sm:tracking-[0.25em]
+//     "
+// >
+//     Me ouça
+// </Link>
+//             </div>
+//         </section>
+//     );
+// }
+
+// export default Hero;

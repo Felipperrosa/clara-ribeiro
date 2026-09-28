@@ -229,7 +229,7 @@ function Contato() {
                                         border-gray-200
                                         transition-colors
                                         duration-300
-                                        hover:text-red-600
+                                        hover:text-[#3c096c]
                                     "
                                 >
                                     <span
@@ -272,7 +272,7 @@ function Contato() {
                                         border-gray-200
                                         transition-colors
                                         duration-300
-                                        hover:text-red-600
+                                        hover:text-[#3c096c]
                                     "
                                 >
                                     <span
@@ -530,14 +530,14 @@ function Contato() {
                                     className="
                                         w-full
                                         rounded-lg
-                                        bg-black
+                                        bg-[#0E111D]
                                         text-sm
                                         font-bold
                                         text-white
                                         transition-all
                                         duration-300
                                         hover:-translate-y-1
-                                        hover:bg-red-600
+                                        hover:bg-[#3c096c]
                                         hover:shadow-lg
                                         active:translate-y-0
                                         active:scale-[0.98]

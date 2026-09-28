@@ -7,14 +7,15 @@ function Navbar() {
     const linkClass = ({ isActive }) => `
         relative
         pb-2
-        text-white
+        text-[#DDF0FF]
         uppercase
         tracking-[2px]
         text-xs
         font-medium
         transition-colors
         duration-300
-        hover:text-red-500
+
+        hover:text-[#3D3D9D]
 
         after:absolute
         after:left-1/2
@@ -24,7 +25,7 @@ function Navbar() {
         after:-translate-x-1/2
         after:origin-center
         after:scale-x-0
-        after:bg-red-500
+        after:bg-[#4457CA]
         after:transition-transform
         after:duration-300
 
@@ -38,8 +39,8 @@ function Navbar() {
     }
 
     return (
-        <header className="relative z-50 bg-black text-white shadow-md">
-            <nav className="relative flex h-[105px] items-center justify-between bg-black">
+        <header className="relative z-50 bg-[#0E111D] text-[#DDF0FF] shadow-md">
+            <nav className="relative flex h-[105px] items-center justify-between bg-[#0E111D]">
                 <NavLink
                     to="/"
                     onClick={fecharMenu}
@@ -50,10 +51,10 @@ function Navbar() {
                         text-2xl
                         font-light
                         tracking-wide
-                        text-white
+                        text-[#DDF0FF]
                         transition-colors
                         duration-300
-                        hover:text-red-500
+                        hover:text-[#3c096c]
                         sm:text-3xl
                     "
                 >
@@ -135,7 +136,7 @@ function Navbar() {
                         rounded-md
                         transition-colors
                         duration-300
-                        hover:bg-white/10
+                        hover:bg-[#161526]
                         md:hidden
                     "
                 >
@@ -144,7 +145,7 @@ function Navbar() {
                             block
                             h-[2px]
                             w-6
-                            bg-white
+                            bg-[#DDF0FF]
                             transition-transform
                             duration-300
                             ${
@@ -160,7 +161,7 @@ function Navbar() {
                             block
                             h-[2px]
                             w-6
-                            bg-white
+                            bg-[#DDF0FF]
                             transition-opacity
                             duration-300
                             ${menuAberto ? "opacity-0" : "opacity-100"}
@@ -172,7 +173,7 @@ function Navbar() {
                             block
                             h-[2px]
                             w-6
-                            bg-white
+                            bg-[#DDF0FF]
                             transition-transform
                             duration-300
                             ${
@@ -194,8 +195,8 @@ function Navbar() {
                     w-full
                     overflow-hidden
                     border-t
-                    border-white/10
-                    bg-black
+                    border-[#2A2841]
+                    bg-[#010307]
                     shadow-xl
                     transition-all
                     duration-300

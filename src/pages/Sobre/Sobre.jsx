@@ -1,30 +1,122 @@
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
-import SectionTitle from "../../components/SectionTitle/SectionTitle";
 
-import claraSobre from "../../assets/images/Sobre/clara-sobre.jpg";
+import claraSobre from "../../assets/images/Sobre/clara_sobre_2.jpg";
+import claraSobreFundo from "../../assets/images/Sobre/clara-sobre-fundo.jpg";
 
 function Sobre() {
     return (
-        <div className="flex min-h-screen flex-col">
+        <div className="flex min-h-screen flex-col bg-[#010307]">
             <Navbar />
 
-            <main className="flex-1 bg-white text-black">
+            <main
+                className="
+                    relative
+                    flex-1
+                    overflow-hidden
+                "
+            >
+                {/* FOTO DE FUNDO */}
+                <img
+                    src={claraSobreFundo}
+                    alt=""
+                    aria-hidden="true"
+                    className="
+                        pointer-events-none
+                        absolute
+                        inset-0
+                        h-full
+                        w-full
+                        scale-[1.03]
+                        object-cover
+                        object-[50%_39%]
+                    "
+                />
+
+                {/* CAMADA ESCURA */}
                 <div
+                    aria-hidden="true"
+                    className="
+                        pointer-events-none
+                        absolute
+                        inset-0
+                        bg-[#010307]/15
+                    "
+                />
+
+                {/* GRADIENTE */}
+                <div
+                    aria-hidden="true"
+                    className="
+                        pointer-events-none
+                        absolute
+                        inset-0
+                    "
                     style={{
-                        width: "calc(100% - clamp(32px, 5vw, 80px))",
+                        background: `
+                            radial-gradient(
+                                circle at 50% 28%,
+                                rgba(68, 87, 202, 0.02) 0%,
+                                rgba(1, 3, 7, 0.03) 45%,
+                                rgba(1, 3, 7, 0.08) 100%
+                            )
+                        `,
+                    }}
+                />
+
+                {/* CONTEÚDO */}
+                <div
+                    className="relative z-10"
+                    style={{
+                        width:
+                            "calc(100% - clamp(32px, 5vw, 80px))",
+
                         maxWidth: "1440px",
-                        margin: "0 auto",
-                        paddingTop: "28px",
-                        paddingBottom: "40px",
+
+                        marginLeft:
+                            "clamp(16px, 2vw, 32px)",
+
+                        marginRight: "auto",
+
+                        paddingTop: "48px",
+
+                        paddingBottom: "48px",
                     }}
                 >
-                    <SectionTitle titulo="Sobre mim" />
-
-                    <section
+                    {/* TÍTULO */}
+                    <div
                         style={{
-                            marginTop: "clamp(32px, 5vw, 48px)",
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "20px",
+                            marginBottom: "40px",
                         }}
+                    >
+                        <h1
+                            className="shrink-0 text-[#DDF0FF]"
+                            style={{
+                                margin: 0,
+                                fontSize:
+                                    "clamp(26px, 4vw, 32px)",
+                                fontWeight: 400,
+                                lineHeight: 1,
+                            }}
+                        >
+                            Sobre mim
+                        </h1>
+
+                        <div
+                            style={{
+                                flex: 1,
+                                height: "1px",
+                                backgroundColor:
+                                    "rgba(221, 240, 255, 0.35)",
+                            }}
+                        />
+                    </div>
+
+                    {/* CONTEÚDO PRINCIPAL */}
+                    <section
                         className="
                             flex
                             flex-col
@@ -38,16 +130,17 @@ function Sobre() {
                             lg:gap-16
                         "
                     >
-                        {/* Foto */}
+                        {/* FOTO DA BIOGRAFIA */}
                         <div
                             className="
                                 group
                                 w-full
-                                max-w-[240px]
+                                max-w-[170px]
                                 shrink-0
                                 overflow-hidden
                                 rounded-xl
-                                shadow-md
+
+                                shadow-[0_12px_30px_rgba(1,3,7,0.25)]
 
                                 sm:max-w-[260px]
                                 md:max-w-[280px]
@@ -60,70 +153,69 @@ function Sobre() {
                                     aspect-[4/5]
                                     w-full
                                     object-cover
+
                                     transition-transform
                                     duration-500
                                     ease-out
+
                                     group-hover:scale-105
                                 "
                             />
                         </div>
 
-                        {/* Biografia */}
+                        {/* BIOGRAFIA */}
                         <div className="w-full max-w-3xl">
                             <p
                                 className="
                                     text-sm
+                                    font-medium
                                     leading-7
-                                    text-gray-700
+
+                                   text-[#DDF0FF]
 
                                     sm:text-base
+
                                     md:text-[15px]
+                                    md:text-[#DDF0FF]
                                 "
                             >
-                                Aos 29 anos, Clara Ribeiro é oriunda da Zona
-                                Norte do Rio de Janeiro e traz consigo uma
-                                identidade musical singular e ancestral. Desde a
-                                infância, ela revelou uma alma artística inata,
-                                cujas influências abrangem diversos gêneros, como
-                                samba, MPB, R&B, música africana, música indígena
-                                e ritmos harmônicos com elementos da música
-                                eletrônica popular.
+                                Clara Ribeiro é cantora e compositora brasileira, com sonoridades que nascem do encontro entre referências da MPB, samba, reggae, R&B, neo soul e sonoridades afrodiaspóricas, com a liberdade criativa da música eletrônica.
                             </p>
 
                             <p
                                 className="
                                     mt-5
                                     text-sm
+                                    font-medium
                                     leading-7
-                                    text-gray-700
+
+                                   text-[#DDF0FF]
 
                                     sm:text-base
+
                                     md:text-[15px]
+                                    md:text-[#DDF0FF]
                                 "
                             >
-                                Inspirada por sua ancestralidade e por sua
-                                vivência, Clara desenvolve uma sonoridade que
-                                mistura sensibilidade, força e experimentação.
-                                Sua arte transforma experiências pessoais,
-                                afetivas e sociais em composições marcadas por
-                                identidade, liberdade e expressão.
+                                Dona de uma escrita íntima e performances intensas, Clara Ribeiro transforma experiências de afeto, desejo e ancestralidade através de um eu lírico irreverente, transitando entre diferentes atmosferas de beats e composição, sem se prender a uma única linguagem. Ao longo de sua trajetória, Clara Ribeiro já colaborou com nomes como Chediak, Maui, Africanoise, Kbrum, ANTCONSTANTINO, Lettié, Maskotte, Ciana, entre outros artistas e produtores da cena independente. Essas parcerias atravessam momentos plurais de sua discografia, e impulsionam a revelação de uma artista autêntica, interessada em explorar novas sonoridades baseada em identidade forte e coesa, nítida em todas as suas respectivas obras.
                             </p>
 
                             <p
                                 className="
                                     mt-5
                                     text-sm
+                                    font-medium
                                     leading-7
-                                    text-gray-700
+
+                                    text-[#DDF0FF]
 
                                     sm:text-base
+
                                     md:text-[15px]
+                                    md:text-[#DDF0FF]
                                 "
                             >
-                                Em seus trabalhos, busca criar conexões com o
-                                público por meio de letras sinceras, arranjos
-                                autorais e uma presença artística que valoriza
-                                suas raízes e a diversidade da música brasileira.
+                                Lançou seu primeiro EP em 2025, “Amor Para Além do Atlântico Sul", que acumula mais de 80 mil streams no Spotify. Depois, Clara Ribeirou revelou o EP “Desabafos”, realizado em parceria com Chediak, que já ultrapassou 100 mil streams. Atualmente, Clara apresenta “Outras Ondas, Mesmas Cores”, mixtape que aprofunda sua pesquisa na música eletrônica a partir do House, City Pop, UK Garage e Grime. A obra consolida uma artista em constante movimento e cada vez mais consciente da própria arte.
                             </p>
                         </div>
                     </section>

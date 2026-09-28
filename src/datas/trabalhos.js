@@ -7,7 +7,19 @@ import arrepio from "../assets/images/Trabalhos/arrepio.jpg";
 import intensidade from "../assets/images/Trabalhos/intensidade.jpg";
 import pertinhoDeMim from "../assets/images/Trabalhos/pertinho-de-mim.jpg";
 import acender from "../assets/images/Trabalhos/acender.jpg";
+import oomc from "../assets/images/Trabalhos/fundo_ondas_frente.jpg";
 
+
+export const mixtapes = [
+    {
+        id: 1,
+        imagem: oomc,
+        titulo: "Outras Ondas, Mesma Cores",
+        artistas: "Clara Ribeiro",
+        data: "25/09/2026",
+        spotify: "https://open.spotify.com/intl-pt/album/1cHkmYXHlgdhwcIsK4P8jU?si=Tjve1U3pQmC9kJMlHJSk4Q",
+    },
+];
 export const eps = [
     {
         id: 1,
@@ -28,7 +40,7 @@ export const eps = [
 ];
 
 export const singles = [
-    {
+     {
         id: 1,
         imagem: fuga,
         titulo: "Fuga",
