@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { FaEnvelope, FaInstagram } from "react-icons/fa";
 
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
+
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
 
 const instagramUrl = "https://www.instagram.com/diogoqueiroz__/";
 const instagramNome = "@diogoqueiroz__";
-const emailContato = "contato.clararibeiro@gmail.com";
+const emailContato = "grisvlho@gmail.com";
 
 const formularioInicial = {
     nome: "",
