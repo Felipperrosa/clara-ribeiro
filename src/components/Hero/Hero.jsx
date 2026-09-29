@@ -31,7 +31,7 @@ function Hero() {
                             object-cover
                             object-[50%_55%]
 
-                            max-sm:object-[55%_55%]
+                            max-sm:object-[60%_55%]
                             "
                     />
                 </picture>
