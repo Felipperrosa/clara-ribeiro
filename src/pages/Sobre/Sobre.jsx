@@ -1,14 +1,11 @@
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
-
 import claraSobre from "../../assets/images/Sobre/clara_sobre_2.jpg";
 import claraSobreFundo from "../../assets/images/Sobre/clara-sobre-fundo.jpg";
+import { useLanguage } from "../../hooks/useLanguage";
 
 function Sobre() {
+    const { t } = useLanguage();
     return (
         <div className="flex min-h-screen flex-col bg-[#010307]">
-            
-
             <main
                 className="
                     relative
@@ -102,7 +99,7 @@ function Sobre() {
                                 lineHeight: 1,
                             }}
                         >
-                            Sobre mim
+                            {t("sobre.titulo")}
                         </h1>
 
                         <div
@@ -124,13 +121,13 @@ function Sobre() {
                             gap-8
 
                             md:flex-row
-                            md:items-center
+                            md:items-start
                             md:gap-12
 
                             lg:gap-16
                         "
                     >
-                        {/* FOTO DA BIOGRAFIA */}
+                        {/* FOTO DA BIOGRAFIA (Fica intacta no topo) */}
                         <div
                             className="
                                 group
@@ -163,66 +160,52 @@ function Sobre() {
                             />
                         </div>
 
-                        {/* BIOGRAFIA */}
-                        <div className="w-full max-w-3xl">
+                        {/* BIOGRAFIA (Apenas este bloco desce usando mt-8 ou pt-6) */}
+                        <div className="w-full max-w-3xl md:mt-8">
                             <p
                                 className="
                                     text-sm
                                     font-medium
                                     leading-7
-
-                                   text-[#DDF0FF]
-
-                                    sm:text-base
-
-                                    md:text-[15px]
-                                    md:text-[#DDF0FF]
-                                "
-                            >
-                                Clara Ribeiro é cantora e compositora brasileira, com sonoridades que nascem do encontro entre referências da MPB, samba, reggae, R&B, neo soul e sonoridades afrodiaspóricas, com a liberdade criativa da música eletrônica.
-                            </p>
-
-                            <p
-                                className="
-                                    mt-5
-                                    text-sm
-                                    font-medium
-                                    leading-7
-
-                                   text-[#DDF0FF]
-
-                                    sm:text-base
-
-                                    md:text-[15px]
-                                    md:text-[#DDF0FF]
-                                "
-                            >
-                                Dona de uma escrita íntima e performances intensas, Clara Ribeiro transforma experiências de afeto, desejo e ancestralidade através de um eu lírico irreverente, transitando entre diferentes atmosferas de beats e composição, sem se prender a uma única linguagem. Ao longo de sua trajetória, Clara Ribeiro já colaborou com nomes como Chediak, Maui, Africanoise, Kbrum, ANTCONSTANTINO, Lettié, Maskotte, Ciana, entre outros artistas e produtores da cena independente. Essas parcerias atravessam momentos plurais de sua discografia, e impulsionam a revelação de uma artista autêntica, interessada em explorar novas sonoridades baseada em identidade forte e coesa, nítida em todas as suas respectivas obras.
-                            </p>
-
-                            <p
-                                className="
-                                    mt-5
-                                    text-sm
-                                    font-medium
-                                    leading-7
-
                                     text-[#DDF0FF]
-
                                     sm:text-base
-
                                     md:text-[15px]
-                                    md:text-[#DDF0FF]
                                 "
                             >
-                                Lançou seu primeiro EP em 2025, “Amor Para Além do Atlântico Sul", que acumula mais de 80 mil streams no Spotify. Depois, Clara Ribeirou revelou o EP “Desabafos”, realizado em parceria com Chediak, que já ultrapassou 100 mil streams. Atualmente, Clara apresenta “Outras Ondas, Mesmas Cores”, mixtape que aprofunda sua pesquisa na música eletrônica a partir do House, City Pop, UK Garage e Grime. A obra consolida uma artista em constante movimento e cada vez mais consciente da própria arte.
+                                {t("sobre.bio1")}
+                            </p>
+
+                            <p
+                                className="
+                                    mt-5
+                                    text-sm
+                                    font-medium
+                                    leading-7
+                                    text-[#DDF0FF]
+                                    sm:text-base
+                                    md:text-[15px]
+                                "
+                            >
+                                {t("sobre.bio2")}
+                            </p>
+
+                            <p
+                                className="
+                                    mt-5
+                                    text-sm
+                                    font-medium
+                                    leading-7
+                                    text-[#DDF0FF]
+                                    sm:text-base
+                                    md:text-[15px]
+                                "
+                            >
+                                {t("sobre.bio3")}
                             </p>
                         </div>
                     </section>
                 </div>
             </main>
-
-            
         </div>
     );
 }

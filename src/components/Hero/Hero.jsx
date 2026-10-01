@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 
 import fotoHero from "../../assets/images/Hero/banner_01.jpg";
 import fotoHeroMobile from "../../assets/images/Hero/banner_01_v.jpg";
+import { useLanguage } from "../../hooks/useLanguage";
 
 function Hero() {
+    const { t } = useLanguage();
     return (
         <section
             className="
@@ -53,17 +55,17 @@ function Hero() {
                     to="/trabalhos"
                     className="
                         inline-flex
-                        min-h-[48px]
-                        min-w-[155px]
+                        min-h-[56px]
+                        min-w-[180px]
                         items-center
                         justify-center
                         rounded-full
                         border-2
                         border-[#DDF0FF]
                         bg-[#010307]/10
-                        px-9
-                        py-3
-                        text-base
+                        px-10
+                        py-4
+                        text-lg
                         font-semibold
                         uppercase
                         tracking-[0.18em]
@@ -90,10 +92,10 @@ function Hero() {
                         hover:text-[#010307]
                         hover:shadow-[0_0_22px_rgba(68,87,202,0.55)]
 
-                        sm:min-w-[170px]
-                        sm:px-12
-                        sm:py-4
-                        sm:text-lg
+                        sm:min-w-[210px]
+                        sm:px-14
+                        sm:py-5
+                        sm:text-xl
                         sm:tracking-[0.25em]
 
                         md:absolute
@@ -105,7 +107,7 @@ function Hero() {
                         md:hover:-translate-x-[calc(50%-12px)]
                     "
                 >
-                    Me ouça
+                    {t("hero.botao")}
                 </Link>
             </div>
         </section>

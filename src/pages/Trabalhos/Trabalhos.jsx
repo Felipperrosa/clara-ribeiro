@@ -1,7 +1,5 @@
 import { useRef } from "react";
 
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 import TrabalhoCard from "../../components/TrabalhoCard/TrabalhoCard";
 import { eps, singles, mixtapes } from "../../datas/trabalhos";
 

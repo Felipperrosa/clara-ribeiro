@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { FaEnvelope, FaInstagram } from "react-icons/fa";
-
-
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
+import { useLanguage } from "../../hooks/useLanguage";
 
 const instagramUrl = "https://www.instagram.com/diogoqueiroz__/";
 const instagramNome = "@diogoqueiroz__";
@@ -15,6 +14,8 @@ const formularioInicial = {
 };
 
 function Contato() {
+    const { t } = useLanguage();
+
     const [formulario, setFormulario] = useState(formularioInicial);
     const [erros, setErros] = useState({});
 
@@ -23,51 +24,51 @@ function Contato() {
 
         if (campo === "nome") {
             if (!valorLimpo) {
-                return "Informe seu nome.";
+                return t("contato.erros.nomeObrigatorio");
             }
 
             if (valorLimpo.length < 3) {
-                return "O nome precisa ter pelo menos 3 caracteres.";
+                return t("contato.erros.nomeMinimo");
             }
 
             if (valorLimpo.length > 60) {
-                return "O nome pode ter no máximo 60 caracteres.";
+                return t("contato.erros.nomeMaximo");
             }
 
             const nomeValido = /^[A-Za-zÀ-ÖØ-öø-ÿ' -]+$/;
 
             if (!nomeValido.test(valorLimpo)) {
-                return "O nome não pode conter números ou caracteres especiais.";
+                return t("contato.erros.nomeInvalido");
             }
         }
 
         if (campo === "email") {
             if (!valorLimpo) {
-                return "Informe seu e-mail.";
+                return t("contato.erros.emailObrigatorio");
             }
 
             if (valorLimpo.length > 120) {
-                return "O e-mail pode ter no máximo 120 caracteres.";
+                return t("contato.erros.emailMaximo");
             }
 
             const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
             if (!emailValido.test(valorLimpo)) {
-                return "Informe um endereço de e-mail válido.";
+                return t("contato.erros.emailInvalido");
             }
         }
 
         if (campo === "mensagem") {
             if (!valorLimpo) {
-                return "Escreva uma mensagem.";
+                return t("contato.erros.mensagemObrigatoria");
             }
 
             if (valorLimpo.length < 10) {
-                return "A mensagem precisa ter pelo menos 10 caracteres.";
+                return t("contato.erros.mensagemMinimo");
             }
 
             if (valorLimpo.length > 1000) {
-                return "A mensagem pode ter no máximo 1.000 caracteres.";
+                return t("contato.erros.mensagemMaximo");
             }
         }
 
@@ -132,7 +133,7 @@ function Contato() {
         const mensagem = formulario.mensagem.trim();
 
         const assunto = encodeURIComponent(
-            `Contato pelo site — ${nome}`
+            `${t("contato.assunto")} — ${nome}`
         );
 
         const corpo = encodeURIComponent(
@@ -147,8 +148,6 @@ function Contato() {
 
     return (
         <div className="flex min-h-screen flex-col">
-            
-
             <main className="flex-1 bg-white text-black">
                 <div
                     style={{
@@ -159,7 +158,7 @@ function Contato() {
                         paddingBottom: "48px",
                     }}
                 >
-                    <SectionTitle titulo="Contato" />
+                    <SectionTitle titulo={t("contato.titulo")} />
 
                     <section
                         style={{
@@ -203,7 +202,7 @@ function Contato() {
                                 }}
                                 className="text-base font-bold"
                             >
-                                Dados de contato
+                                {t("contato.dadosContato")}
                             </h2>
 
                             <div
@@ -249,7 +248,7 @@ function Contato() {
 
                                     <span className="min-w-0">
                                         <span className="block text-[10px] uppercase text-gray-500">
-                                            Instagram
+                                            {t("contato.instagram")}
                                         </span>
 
                                         <span className="mt-1 block break-words text-xs font-medium">
@@ -292,7 +291,7 @@ function Contato() {
 
                                     <span className="min-w-0">
                                         <span className="block text-[10px] uppercase text-gray-500">
-                                            E-mail
+                                            {t("contato.email")}
                                         </span>
 
                                         <span className="mt-1 block break-all text-xs font-medium underline">
@@ -324,7 +323,7 @@ function Contato() {
                                 }}
                                 className="text-base font-bold"
                             >
-                                Envie uma mensagem
+                                {t("contato.enviarMensagem")}
                             </h2>
 
                             <div
@@ -342,7 +341,7 @@ function Contato() {
                                         }}
                                         className="text-xs font-medium"
                                     >
-                                        Nome
+                                        {t("contato.nome")}
                                     </label>
 
                                     <input
@@ -402,7 +401,7 @@ function Contato() {
                                         }}
                                         className="text-xs font-medium"
                                     >
-                                        E-mail
+                                        {t("contato.emailCampo")}
                                     </label>
 
                                     <input
@@ -466,7 +465,7 @@ function Contato() {
                                             htmlFor="mensagem"
                                             className="text-xs font-medium"
                                         >
-                                            Mensagem
+                                            {t("contato.mensagem")}
                                         </label>
 
                                         <span className="text-[10px] text-gray-500">
@@ -482,7 +481,9 @@ function Contato() {
                                         onBlur={validarAoSairDoCampo}
                                         maxLength={1000}
                                         rows={6}
-                                        aria-invalid={Boolean(erros.mensagem)}
+                                        aria-invalid={Boolean(
+                                            erros.mensagem
+                                        )}
                                         aria-describedby={
                                             erros.mensagem
                                                 ? "erro-mensagem"
@@ -542,15 +543,13 @@ function Contato() {
                                         active:scale-[0.98]
                                     "
                                 >
-                                    Enviar mensagem
+                                    {t("contato.enviar")}
                                 </button>
                             </div>
                         </form>
                     </section>
                 </div>
             </main>
-
-           
         </div>
     );
 }

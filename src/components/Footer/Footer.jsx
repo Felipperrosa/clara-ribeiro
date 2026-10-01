@@ -3,8 +3,11 @@ import {
     FaSpotify,
     FaYoutube,
 } from "react-icons/fa";
+import { useLanguage } from "../../hooks/useLanguage";
 
 function Footer() {
+    const { t } = useLanguage();
+
     return (
         <footer
             className="
@@ -135,7 +138,7 @@ function Footer() {
                     sm:text-[11px]
                 "
             >
-                © 2026 — Todos os direitos reservados. Clararibeiro.com.br
+                {t("footer.copyright")}
             </p>
         </footer>
     );
