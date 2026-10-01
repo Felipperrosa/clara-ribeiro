@@ -40,12 +40,11 @@ const en = {
     },
 
     trabalhos: {
-        mixtapes: "Mixtapes",
-        eps: "EPs",
-        singles: "Singles",
+       
+        lancadoEm: "Released on",
+        ouvirNoSpotify: "Listen on Spotify:",
+        capaDe: "Cover of"
 
-        voltar: "Go back in the",
-        avancar: "Go forward in the",
     },
 
     sobre: {

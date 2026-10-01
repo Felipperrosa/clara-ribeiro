@@ -41,12 +41,11 @@ const es = {
     },
 
     trabalhos: {
-        mixtapes: "Mixtapes",
-        eps: "EPs",
-        singles: "Singles",
+      
+        lancadoEm: "Lanzado el",
+        ouvirNoSpotify: "Escuchar en Spotify:",
+        capaDe: "Portada de"
 
-        voltar: "Volver a la lista de",
-        avancar: "Avanzar en la lista de",
     },
 
     sobre: {

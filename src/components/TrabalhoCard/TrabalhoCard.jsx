@@ -1,3 +1,5 @@
+import { useLanguage } from "../../hooks/useLanguage";
+
 function TrabalhoCard({
     imagem,
     titulo,
@@ -5,12 +7,14 @@ function TrabalhoCard({
     data,
     spotify,
 }) {
+    const { t } = useLanguage();
+
     return (
         <a
             href={spotify}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`Ouvir ${titulo} no Spotify`}
+            aria-label={`${t("trabalhos.ouvirNoSpotify")} ${titulo}`}
             className="
                 group
                 block
@@ -43,22 +47,19 @@ function TrabalhoCard({
                     bg-[#161526]
                     shadow-md
 
-                    /* TRANSITION KEN HOVER EFFECTS ITI LADAWAN */
                     transition-all
                     duration-500
                     ease-out
 
-                    /* 1. Ring/Borde nga aglawag */
                     group-hover:ring-2
                     group-hover:ring-[#DDF0FF]/80
 
-                    /* 2. Glow effect (Aniniwan nga agluwas ti silag) */
                     group-hover:shadow-[0_0_25px_rgba(68,87,202,0.65)]
                 "
             >
                 <img
                     src={imagem}
-                    alt={`Capa de ${titulo}`}
+                    alt={`${t("trabalhos.capaDe")} ${titulo}`}
                     loading="lazy"
                     className="
                         h-full
@@ -72,7 +73,7 @@ function TrabalhoCard({
                     "
                 />
 
-                {/* OVERLAY NGA AGLAWAG (Optional: Idaddua ti raniag) */}
+                {/* OVERLAY DE GLOW */}
                 <div 
                     className="
                         pointer-events-none
@@ -89,7 +90,7 @@ function TrabalhoCard({
                 />
             </div>
 
-            {/* INPORMASYON (TEXTOS) */}
+            {/* INFORMAÇÕES (TEXTOS) */}
             <div className="pt-3">
                 <h3
                     className="
@@ -137,7 +138,7 @@ function TrabalhoCard({
                         sm:text-xs
                     "
                 >
-                    Lançado em {data}
+                    {t("trabalhos.lancadoEm")} {data}
                 </p>
             </div>
         </a>
